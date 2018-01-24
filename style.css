@@ -1,0 +1,14 @@
+body 
+{
+	background-color:lightblue;
+}
+
+.rod
+{
+height:100px;
+width:600px;
+border:2px;
+background-color:grey;
+}
+
+

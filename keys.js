@@ -19,20 +19,20 @@ if ($n >= 0 && $n <= 10 && $digit_count < 10)
 
 	if ($digit_count == 0)
 	{
-	document.getElementById('digits_box').innerHTML += ($n + "x");
+	document.getElementById('single_digit_box').innerHTML += ($n);
 	$single_digit = $n;
 	$digit_count++;
 	}
-	else if ($digit_count < 10)
+	else if ($digit_count <= 10)
 	{
 	document.getElementById('digits_box').innerHTML += ($n + "");
 	$digits[$digit_count++]=$n;
 	}
-	else
+
+	if ($digit_count >= 10)
 	{
-	documet.onkeypress == function(e) {};
-	addRods($single_digit,$digits,$digit_count);
-	runSim();
+	document.onkeypress == function(e) {};
+	addRods($single_digit,$digits,$digit_count);	
 	}
 
 }

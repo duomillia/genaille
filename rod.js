@@ -1,27 +1,24 @@
-function addRods($single_digit,$digits,$digit_count);
-	
+var $ready = 4;
+var $ok = 200;
+
+function addRods($single_digit,$digits,$digit_count)
 {
-	for ($i=$digit_count, $i >=0, i--)
-	{
-	document.getElementById('rods').innerHTML.add
-	(
-	generateRod($digits[$i]);	
-	)
 
-	document.getElementById('rods').innerHTML.add
-	(
-	generateRod($digits['index']);	
-	)	
+var req = new XMLHttpRequest();
 
-	}
-
-
+req.onreadystatechange = function () {
+	if (this.readyState == $ready && this.status == $ok) {
+		//alert(this.responseText);	
+		 document.getElementById('rods').innerHTML +=(this.responseText);
+		};
+};
+$digits = document.getElementById('digits_box').innerHTML;
+$single = document.getElementById('single_digit_box').innerHTML;
+//alert ($digits);
+req.open("GET","rod.php?n=" + $digits + "&m=" + $single);
+req.send();
 	
 }
 
-function generateRod($number)
-{
-if ($number == 'index')
-$r = "
 
-}
+
